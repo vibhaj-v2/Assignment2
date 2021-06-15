@@ -13,22 +13,22 @@ userinput:inputval
 function addition() {
     console.log(newval);
     finalval += newval; 
-    newval = finalval;
+    inputval = finalval;
    }
 
 function multiplication() {
     finalval *= newval; 
-    newval = finalval;
+    inputval = finalval;
 }
 
 function incrementval() {
     finalval = ++newval; 
-    newval = finalval;
+    inputval = finalval;
 }
 
 function decrementval() {
     finalval = --newval; 
-    newval = finalval;
+    inputval = finalval;
 }
 function reset() {
     console.log(inputval);
