@@ -1,37 +1,58 @@
 
-
-
-var inputval = document.getElementById("userinput").value;
-var newval = parseInt(inputval);
+var inputval;
+var intval;
 var finalval = 1;
-console.log(inputval);
 
-var testObject = {
-userinput:inputval
+function getTheChangeValue() {
+    inputval = document.getElementById("userinput").value;
+    intval = parseInt(inputval);
+    }
+
+var calcobj = {
+    userinput : intval,
+    get calcval() {
+    return this.userinput;
+      },
+      set calcval(val) {
+        this.userinput = val;
+      }
 };
 
+function display(uval) {
+    document.getElementById("userinput").value = uval;
+}
+
 function addition() {
-    console.log(newval);
-    finalval += newval; 
-    inputval = finalval;
-   }
+   finalval += calcobj.calcval;
+   calcobj.calcval = finalval;
+   display(finalval);
+       }
 
-function multiplication() {
-    finalval *= newval; 
-    inputval = finalval;
-}
+       function multiplication() {
+        finalval *= calcobj.calcval;
+   calcobj.calcval = finalval;
+   display(finalval);
+       }
+    
+    function incrementval() {
+        finalval = ++calcobj.calcval;
+   calcobj.calcval = finalval;
+   display(finalval);
+       }
+    
+    function decrementval() {
+    finalval = --calcobj.calcval;
+   calcobj.calcval = finalval;
+   display(finalval);
+    }
 
-function incrementval() {
-    finalval = ++newval; 
-    inputval = finalval;
-}
 
-function decrementval() {
-    finalval = --newval; 
-    inputval = finalval;
-}
-function reset() {
-    console.log(inputval);
-    inputval = "";
 
-}
+
+
+
+
+
+
+
+

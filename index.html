@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-    <style>
-.calc-container{height:80vh; display:flex; justify-content: 
-center; align-items:center;
-flex-direction: column;}
-#userinput{width:500px; height:50px; border:1px solid #ddd; margin-bottom:30px; padding:10px;}
-.btnbox{ display:flex; 
-justify-content: center;}
-.btn{width:80px; height:80px; margin-right:20px; font-size: 20px; font-weight: bold;}
 
-    </style>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vibha's Assignment</title>
+    <style>
+        .calc-container{height:80vh; display:flex; justify-content: 
+        center; align-items:center;
+        flex-direction: column;}
+        #userinput{width:500px; height:50px; border:1px solid #ddd; margin-bottom:30px; padding:10px;}
+        .btnbox{ display:flex; 
+        justify-content: center;}
+        .btn{width:80px; height:80px; margin-right:20px; font-size: 20px; font-weight: bold;}
+        
+            </style>
 </head>
 <body>
     <div class="calc-container">
-<input type="text" id="userinput" name="userinput" placeholder="Enter a No.">
+        <input type="text" id="userinput" name="userinput" placeholder="Enter a No." onchange="getTheChangeValue()">
 <div class="btnbox">
-<button class="btn btn1" id="increment" onclick="incrementval();">++</button>
-<button class="btn btn2" id="decrement" onclick="decrementval();">--</button>
-<button class="btn btn3" id="addition" onclick="addition();">+</button>
-<button class="btn btn4" id="multiply" onclick="multiplication();">*</button>
-<button class="btn btn4" id="reset" onclick="reset(); return false;">reset</button>
+    <button class="btn btn3" id="addition" onclick="addition();">+</button>
+    <button class="btn btn4" id="multiply" onclick="multiplication();">*</button>
+    <button class="btn btn1" id="increment" onclick="incrementval();">++</button>
+    <button class="btn btn2" id="decrement" onclick="decrementval();">--</button>
+    <button class="btn btn4" id="reset" onclick="document.getElementById('userinput').value = ''">reset</button>
 </div>
 
     </div>
