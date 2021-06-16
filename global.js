@@ -1,49 +1,56 @@
 
-var inputval;
-var intval;
-var finalval = 1;
+// var inputval;
+// var intval;
+// var finalval = 1;
+
+const displayNumber = document.getElementById("userinput");
 
 function getTheChangeValue() {
-    inputval = document.getElementById("userinput").value;
-    intval = parseInt(inputval);
-    }
+    calcobj.setCalcval = parseInt(displayNumber.value);
+    // calcobj.setCalcval = inputval;
+    // intval = parseInt(inputval);
+    // console.log(calcobj.ca)
+}
 
 var calcobj = {
-    userinput : intval,
-    get calcval() {
-    return this.userinput;
-      },
-      set calcval(val) {
+    userinput : 0,
+    get getCalcval() {
+        return this.userinput;
+    },
+    set setCalcval(val) {
         this.userinput = val;
-      }
+    }
 };
 
-function display(uval) {
-    document.getElementById("userinput").value = uval;
+function display() {
+    displayNumber.value = calcobj.getCalcval;
 }
 
 function addition() {
-   finalval += calcobj.calcval;
-   calcobj.calcval = finalval;
-   display(finalval);
-       }
+    calcobj.setCalcval = calcobj.userinput + calcobj.userinput;
+//    finalval += calcobj.calcval;
+//    calcobj.calcval = finalval;
+    display();
+}
 
        function multiplication() {
-        finalval *= calcobj.calcval;
-   calcobj.calcval = finalval;
-   display(finalval);
+        calcobj.setCalcval = calcobj.userinput * calcobj.userinput;
+//         finalval *= calcobj.calcval;
+//    calcobj.calcval = finalval;
+   display();
        }
     
     function incrementval() {
-        finalval = ++calcobj.calcval;
-   calcobj.calcval = finalval;
-   display(finalval);
+        calcobj.setCalcval = ++calcobj.userinput;
+//    calcobj.calcval = finalval;
+   display();
        }
     
     function decrementval() {
-    finalval = --calcobj.calcval;
-   calcobj.calcval = finalval;
-   display(finalval);
+        calcobj.setCalcval = --calcobj.userinput;
+//         finalval = --calcobj.calcval;
+//    calcobj.calcval = finalval;
+   display();
     }
 
 
